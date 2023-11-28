@@ -1,0 +1,95 @@
+如需叫用 Just-In-Time (JIT) 偵錯的詳細資料，
+請參閱本訊息結尾處 (而非這個對話方塊) 的資訊。
+
+************** 例外狀況文字 **************
+System.IO.FileNotFoundException: 無法載入檔案或組件 'NPOI.OOXML, Version=2.6.2.0, Culture=neutral, PublicKeyToken=0df73ec7942b34e1' 或其相依性的其中之一。 系統找不到指定的檔案。
+檔案名稱: 'NPOI.OOXML, Version=2.6.2.0, Culture=neutral, PublicKeyToken=0df73ec7942b34e1'
+   於 WinOfficeApp.WordHelper.GetWordTable(String Path)
+   於 WinOfficeApp.Form1.button3_Click(Object sender, EventArgs e)
+   於 System.Windows.Forms.Control.OnClick(EventArgs e)
+   於 System.Windows.Forms.Button.OnClick(EventArgs e)
+   於 System.Windows.Forms.Button.OnMouseUp(MouseEventArgs mevent)
+   於 System.Windows.Forms.Control.WmMouseUp(Message& m, MouseButtons button, Int32 clicks)
+   於 System.Windows.Forms.Control.WndProc(Message& m)
+   於 System.Windows.Forms.ButtonBase.WndProc(Message& m)
+   於 System.Windows.Forms.Button.WndProc(Message& m)
+   於 System.Windows.Forms.Control.ControlNativeWindow.OnMessage(Message& m)
+   於 System.Windows.Forms.Control.ControlNativeWindow.WndProc(Message& m)
+   於 System.Windows.Forms.NativeWindow.Callback(IntPtr hWnd, Int32 msg, IntPtr wparam, IntPtr lparam)
+
+警告: 組件繫結記錄切換為 OFF。
+若要記錄組件繫結失敗，請將登錄值 [HKLM\Software\Microsoft\Fusion!EnableLog] (DWORD) 設為 1。
+注意: 與組件繫結失敗記錄相關的效能會有部分負面影響。
+若要關閉此功能，請移除登錄值 [HKLM\Software\Microsoft\Fusion!EnableLog]。
+
+
+
+************** 已載入的組件 **************
+mscorlib
+    組件版本: 4.0.0.0
+    Win32 版本: 4.8.4645.0 built by: NET48REL1LAST_B
+    程式碼庫: file:///C:/Windows/Microsoft.NET/Framework/v4.0.30319/mscorlib.dll
+----------------------------------------
+WinOfficeApp
+    組件版本: 1.0.0.0
+    Win32 版本: 1.0.0.0
+    程式碼庫: file:///C:/workspace/cprs/github/hihihiht/WA.exe
+----------------------------------------
+System.Windows.Forms
+    組件版本: 4.0.0.0
+    Win32 版本: 4.8.4654.0 built by: NET48REL1LAST_B
+    程式碼庫: file:///C:/Windows/Microsoft.Net/assembly/GAC_MSIL/System.Windows.Forms/v4.0_4.0.0.0__b77a5c561934e089/System.Windows.Forms.dll
+----------------------------------------
+System
+    組件版本: 4.0.0.0
+    Win32 版本: 4.8.4682.0 built by: NET48REL1LAST_B
+    程式碼庫: file:///C:/Windows/Microsoft.Net/assembly/GAC_MSIL/System/v4.0_4.0.0.0__b77a5c561934e089/System.dll
+----------------------------------------
+System.Drawing
+    組件版本: 4.0.0.0
+    Win32 版本: 4.8.4390.0 built by: NET48REL1LAST_C
+    程式碼庫: file:///C:/Windows/Microsoft.Net/assembly/GAC_MSIL/System.Drawing/v4.0_4.0.0.0__b03f5f7f11d50a3a/System.Drawing.dll
+----------------------------------------
+System.Configuration
+    組件版本: 4.0.0.0
+    Win32 版本: 4.8.4190.0 built by: NET48REL1LAST_B
+    程式碼庫: file:///C:/Windows/Microsoft.Net/assembly/GAC_MSIL/System.Configuration/v4.0_4.0.0.0__b03f5f7f11d50a3a/System.Configuration.dll
+----------------------------------------
+System.Core
+    組件版本: 4.0.0.0
+    Win32 版本: 4.8.4682.0 built by: NET48REL1LAST_B
+    程式碼庫: file:///C:/Windows/Microsoft.Net/assembly/GAC_MSIL/System.Core/v4.0_4.0.0.0__b77a5c561934e089/System.Core.dll
+----------------------------------------
+System.Xml
+    組件版本: 4.0.0.0
+    Win32 版本: 4.8.3761.0 built by: NET48REL1
+    程式碼庫: file:///C:/Windows/Microsoft.Net/assembly/GAC_MSIL/System.Xml/v4.0_4.0.0.0__b77a5c561934e089/System.Xml.dll
+----------------------------------------
+System.Windows.Forms.resources
+    組件版本: 4.0.0.0
+    Win32 版本: 4.7.3190.0 built by: NET472REL1LAST_C
+    程式碼庫: file:///C:/Windows/Microsoft.Net/assembly/GAC_MSIL/System.Windows.Forms.resources/v4.0_4.0.0.0_zh-Hant_b77a5c561934e089/System.Windows.Forms.resources.dll
+----------------------------------------
+mscorlib.resources
+    組件版本: 4.0.0.0
+    Win32 版本: 4.7.3190.0 built by: NET472REL1LAST_C
+    程式碼庫: file:///C:/Windows/Microsoft.Net/assembly/GAC_MSIL/mscorlib.resources/v4.0_4.0.0.0_zh-Hant_b77a5c561934e089/mscorlib.resources.dll
+----------------------------------------
+
+************** JIT 偵錯 **************
+若要啟用 Just-In-Time (JIT) 偵錯功能，則必須在
+此應用程式或電腦的 .config 檔案中，設定
+system.windows.forms 區段內的 jitDebugging 值。
+且該應用程式也必須在啟用偵錯的狀態下進行
+編譯。
+
+例如:
+
+<configuration>
+    <system.windows.forms jitDebugging="true" />
+</configuration>
+
+當 JIT 偵錯功能啟用後，會將所有未處理的例外狀況
+傳送給電腦上已註冊的 JIT 偵錯工具進行處
+理，而不是使用這個對話方塊來處理。
+
