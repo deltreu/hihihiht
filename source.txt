@@ -1,0 +1,3 @@
+apis-adm32  user1    ]!pE9J]a
+bpis-adm32  user2    ]!pE9J]b
+cpis-adm32  user3    ]!pE9J]c
